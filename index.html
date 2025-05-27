@@ -4,84 +4,78 @@
   <meta charset="UTF-8">
   <title>Heaven's Children Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+
   <style>
     body {
-      background-color: #5c9ec8;
-      font-family: 'Gochi Hand', cursive;
       margin: 0;
-      padding: 40px 20px 100px;
-      text-align: center;
-      position: relative;
-      overflow-x: hidden;
+      font-family: 'Gochi Hand', cursive;
+      background-color: #FFFFFF;
     }
 
-    .title-image {
-      width: 300px;
-      max-width: 90%;
-      margin: 0 auto 60px;
+    /* 소제목 배너 (성경 구절) */
+    .top-banner {
+      width: 100%;
+      height: auto;
       display: block;
     }
 
-    .product-container {
+    header {
+      background-color: #f8f5f2;
+      height: 160px;
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
-      gap: 40px;
-      z-index: 1;
       position: relative;
+      flex-direction: column;
     }
 
-    .product {
-      background-color: #c2e4f6; /* 스파클 색상으로 배경 설정 */
-      border-radius: 20px;
-      padding: 20px;
-      width: 280px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    .header-image {
+      height: 100%;
+      width: auto;
+      display: block;
+      z-index: 1;
     }
 
-    .product img {
-      width: 100%;
-      border-radius: 10px;
+    .menu {
+      position: absolute;
+      top: 0.3cm;
+      right: 0.5cm;
+      z-index: 2;
     }
 
-    .product-title {
-      margin-top: 15px;
-      font-size: 20px;
-      color: #5c9ec8;
-    }
-
-    .buy-button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #f6cd5a;
-      color: #5c9ec8;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-family: 'Gochi Hand', cursive;
-      transition: background-color 0.3s ease;
-    }
-
-    .buy-button:hover {
-      background-color: #ffd166;
+    .menu a {
+      position: relative;
+      left: -1cm;
+      top: 1cm;
+      margin-left: 20px;
+      text-decoration: none;
+      color: #9cbfa7;
+      font-size: 22px;
+      font-weight: bold;
+      font-family: 'Cinzel', serif;
     }
 
     .sparkle {
       position: absolute;
-      width: 80px;
-      opacity: 0.4;
-      z-index: 0;
+      width: 40px;
+      opacity: 0.5;
+      z-index: 1;
     }
 
-    .sparkle-1 { top: 20px; left: 20px; }
-    .sparkle-2 { top: 100px; right: 40px; }
-    .sparkle-3 { bottom: 180px; left: 80px; }
-    .sparkle-4 { bottom: 200px; right: 30px; }
+    .sparkle-1 { top: 25px; left: 20%; transform: rotate(10deg); }
+    .sparkle-2 { top: 35px; left: 75%; transform: rotate(-15deg); }
+    .sparkle-3 { top: 65px; left: 50%; transform: translateX(-50%) rotate(5deg); }
+    .sparkle-4 { bottom: 25px; left: 30%; transform: rotate(-10deg); }
+    .sparkle-5 { bottom: 30px; right: 30%; transform: rotate(12deg); }
+    .sparkle-6 { top: 40px; left: 5%; transform: rotate(8deg); }
 
     .footer-banner {
-      margin-top: 60px;
+      margin-top: 100px;
+      text-align: center;
     }
 
     .footer-banner img {
@@ -89,64 +83,110 @@
       max-width: 80%;
     }
 
-    /* 모바일 반응형 추가 */
     @media (max-width: 600px) {
-      .product {
-        width: 90%;
-        padding: 15px;
+      header {
+        height: 120px;
       }
 
-      .product-title {
+      .header-image {
+        height: 100%;
+        width: auto;
+      }
+
+      .menu {
+        top: 8px;
+        right: 10px;
+      }
+
+      .menu a {
+        margin-left: 12px;
         font-size: 18px;
       }
 
-      .buy-button {
-        padding: 8px 16px;
-        font-size: 14px;
-      }
-
       .sparkle {
-        width: 60px;
-        opacity: 0.3;
-      }
-
-      .title-image {
-        width: 80%;
+        width: 30px;
+        opacity: 0.4;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Decorative sparkles -->
-  <img src="lightbluesparckle.png" class="sparkle sparkle-1" alt="Sparkle">
-  <img src="lightbluesparckle.png" class="sparkle sparkle-2" alt="Sparkle">
-  <img src="lightbluesparckle.png" class="sparkle sparkle-3" alt="Sparkle">
-  <img src="lightbluesparckle.png" class="sparkle sparkle-4" alt="Sparkle">
+  <!-- 상단 성경 소제목 배너 -->
+  <img src="topScriptureBanner.png" alt="Scripture Banner" class="top-banner">
 
-  <!-- Title -->
-  <img src="titlestar.png" alt="Heaven's Children Title" class="title-image">
+  <!-- 헤더 영역 -->
+  <header>
+    <!-- sparkles -->
+    <img src="lightbluesparckle.png" class="sparkle sparkle-1" alt="Sparkle">
+    <img src="lightbluesparckle.png" class="sparkle sparkle-2" alt="Sparkle">
+    <img src="lightbluesparckle.png" class="sparkle sparkle-3" alt="Sparkle">
+    <img src="lightbluesparckle.png" class="sparkle sparkle-4" alt="Sparkle">
+    <img src="lightbluesparckle.png" class="sparkle sparkle-5" alt="Sparkle">
+    <img src="lightbluesparckle.png" class="sparkle sparkle-6" alt="Sparkle">
 
-  <!-- Products -->
-  <div class="product-container">
-    <div class="product">
-      <img src="sermonnote.png" alt="Sermon Notes">
-      <div class="product-title">Sermon Notes</div>
-      <button class="buy-button" onclick="window.location.href='https://smartstore.naver.com/heavenschildren/products/11887473115'">Buy Now</button>
-    </div>
+    <!-- nav menu -->
+    <nav class="menu">
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+    </nav>
 
-    <div class="product">
-      <img src="starnote.png" alt="Heaven's Children Notebook">
-      <div class="product-title">Heaven's Children Notebook</div>
-      <button class="buy-button" onclick="window.location.href='https://smartstore.naver.com/heavenschildren/products/11887422416'">Buy Now</button>
-    </div>
-  </div>
+    <!-- 타이틀 이미지 -->
+    <img src="heavenschildren_header.png" alt="Heaven's Children Banner" class="header-image">
+  </header>
 
-  <!-- Footer message -->
+  <!-- 제목 배너 밑 메인 이미지 영역 -->
+<div class="main-image-row">
+  <img src="homeMainLeft.png" class="main-image left" alt="Main Left">
+  <div class="white-space"></div>
+  <img src="homeMainRight.png" class="main-image right" alt="Main Right">
+</div>
+
+<style>
+  .main-image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .main-image {
+    width: calc(50% - 0.5cm); /* 양쪽 이미지가 흰 여백 제외하고 반씩 차지 */
+    height: auto;
+    display: block;
+  }
+
+  .white-space {
+    width: 1cm;
+    background-color: #fff;
+    flex-shrink: 0;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .main-image-row {
+      flex-direction: column;
+    }
+
+    .white-space {
+      height: 1cm;
+      width: 100%;
+    }
+
+    .main-image {
+      width: 100%;
+    }
+  }
+</style>
+
+
+  <!-- 하단 성경 말씀 -->
   <div class="footer-banner">
     <img src="purplefont.png" alt="Beloved & Chosen - John 1:12">
   </div>
 
 </body>
 </html>
-
